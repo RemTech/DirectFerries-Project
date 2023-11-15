@@ -1,0 +1,14 @@
+{
+    "screenshots": {
+        "path": "./screenshots/",
+        "takeOnFails": true,
+        "fullPage": false,
+        "thumbnails": false,
+        "disableScreenshots": false
+    },
+
+    "debugMode": false,
+    "debugOnFail": false,
+    "port1": 40000,
+    "port2": 50000
+}
