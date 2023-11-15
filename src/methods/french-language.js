@@ -57,7 +57,7 @@ export const countryIcon = async () => {
          .wait(2)
          .takeElementScreenshot(element.find('a').withAttribute('aria-label','Language Dropdown').filterHidden())
          .click(Selector(element,{visibilityCheck:true}).find('a').withAttribute('aria-label','Language Dropdown').filterHidden());
-          */
+      */
        await t
        .wait(1)
        .click(Selector('[aria-controls="langDropdown"]').nth(0).filterHidden())
