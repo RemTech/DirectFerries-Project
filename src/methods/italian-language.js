@@ -16,6 +16,8 @@ const attrValue='/offers.htm';
 const topLevelDomain='.it';
 const baseURL='https://www.directferries.com';
 const element=Selector('div.user-actions');
+const anchorSelectorTag=Selector('a');
+const h3SelectorTag=Selector('h3')
 
 /**
  * @function homepage
@@ -25,7 +27,7 @@ export const homePage = async () => {
         .maximizeWindow()
         .navigateTo(baseURL)
         .wait(2)
-        .hover(Selector('a').withExactText(specialOffers))
+        .hover(anchorSelectorTag.withExactText(specialOffers))
 };
 
 /**
@@ -34,7 +36,7 @@ export const homePage = async () => {
 export const clickSpecialOffers = async () => {
     await t
         .wait(3)
-        .click(Selector('a').withAttribute(attrKey,attrValue))
+        .click(anchorSelectorTag.withAttribute(attrKey,attrValue))
 };
 
 /**
@@ -49,7 +51,7 @@ export const special_Offers_Page = async () => {
 /**
  * @function click country icon
  * @URL for issue https://testcafe.io/documentation/402752/reference/test-api/selector/filterhidden
- * @issue dimention for the property is 0 X 0 
+ * @issue dimension for the property is 0 X 0 
  */
 export const countryIcon = async () => {
     //div.df__navbar-actions > section > div > div > div > a 
@@ -68,6 +70,6 @@ export const italianPage = async () => {
     await t
         .wait(3)
         .takeScreenshot()
-        .expect(Selector('h3').innerText).eql(italianPageText)
+        .expect(h3SelectorTag.innerText).eql(italianPageText)
         .expect(top_Level_Domain()).contains(topLevelDomain);
 };

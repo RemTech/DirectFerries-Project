@@ -24,5 +24,7 @@ import { Selector, t } from 'testcafe';
 export const homePage = async () => {
     await t
         .navigateTo('https://www.directferries.com')
-        .maximizeWindow();  
+        .maximizeWindow(); 
+        hhhhh
 }; */
+
