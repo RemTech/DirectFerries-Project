@@ -31,13 +31,14 @@ We would like you to complete a small task to demonstrate your technical underst
 
 
 
-********************  To Run The Project ***********************
+### To Run The Project ###
+---------------------------
 
-1. Clone the repository by typing  " git clone <repository_address>  on your Command line interface 
-2. Run the project by typing "<npm install>" and <npm run test> on the project directory (i.e where the project is saved on your computer) Command line interface
++ *Clone the repository by typing  `git clone repository_address`  on your Command line interface* 
++ *Run the project by typing `npm install` and `npm run test` in the project directory (i.e where the project is saved on your computer) Command line interface*
 
-<Note>
-There are false negatives with the first two features due to a problem on the web page reference to the documentation to the issue can be found
-<https://testcafe.io/documentation/402752/reference/test-api/selector/filterhidden>
-
-</Note>
+#### Note ####
+--------------
+> + *There are false negatives with the first two features due to a problem on the web page. Reference to the documentation to the issue can be found below*
+>   + *[TestCafe Documentation](https://testcafe.io/documentation/402752/reference/test-api/selector/filterhidden "Reference")*
+>     + #### *@issue=dimension for the property is 0 X 0* ####
