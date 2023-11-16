@@ -14,7 +14,9 @@ const pathName=ClientFunction(() => window.location.pathname.toString());
 const top_Level_Domain= ClientFunction(() => window.location.href.toString());
 const topLevelDomain='.fr';
 const baseURL='https://www.directferries.com';
-const element=Selector('div.user-actions');
+const iconSelector=Selector('[aria-controls="langDropdown"]');
+const anchorTag = Selector('a');
+const h3Tag = Selector('h3');
 
 /**
  * @function homepage
@@ -24,7 +26,7 @@ export const homePage = async () => {
         .maximizeWindow()
         .navigateTo(baseURL)
         .wait(2)
-        .hover(Selector('a').withExactText(specialOffers))
+        .hover(anchorTag.withExactText(specialOffers))
 };
 
 /**
@@ -33,7 +35,7 @@ export const homePage = async () => {
 export const clickSpecialOffers = async () => {
     await t
         .wait(3)
-        .click(Selector('a').withAttribute(attrKey,attrValue))
+        .click(anchorTag.withAttribute(attrKey,attrValue))
 };
 
 /**
@@ -60,7 +62,7 @@ export const countryIcon = async () => {
       */
        await t
        .wait(1)
-       .click(Selector('[aria-controls="langDropdown"]').nth(0).filterHidden())
+       .click(iconSelector.nth(0).filterHidden());
 };
 
 /**
@@ -70,6 +72,6 @@ export const frenchPage = async () => {
     await t
         .wait(3)
         .takeScreenshot()
-        .expect(Selector('h3').innerText).eql(frenchPageText)
+        .expect(h3Tag.innerText).eql(frenchPageText)
         .expect(top_Level_Domain()).contains(topLevelDomain);
 };
