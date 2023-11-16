@@ -31,8 +31,15 @@ We would like you to complete a small task to demonstrate your technical underst
 
 
 
+
 ### To Run The Project ###
 ---------------------------
+
+
+[![Powered By NodeJs](./image/nodejs.jpg)](https://nodejs.org/en/download/)
+
+
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 + *Clone the repository by typing  `git clone repository_address`  on your Command line interface* 
 + *Run the project by typing `npm install` and `npm run test` in the project directory (i.e where the project is saved on your computer) Command line interface*
