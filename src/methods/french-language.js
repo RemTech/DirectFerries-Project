@@ -7,14 +7,14 @@
 import { ClientFunction, Selector, t } from "testcafe";
 const specialOffers = 'Special offers';
 const resource = '/offers.htm';
-const attrKey='href';
-const attrValue='/offers.htm';
+const attrKey = 'href';
+const attrValue = '/offers.htm';
 const frenchPageText = 'Compagnies de ferry';
-const pathName=ClientFunction(() => window.location.pathname.toString());
-const top_Level_Domain= ClientFunction(() => window.location.href.toString());
-const topLevelDomain='.fr';
-const baseURL='https://www.directferries.com';
-const iconSelector=Selector('[aria-controls="langDropdown"]');
+const pathName = ClientFunction(() => window.location.pathname.toString());
+const top_Level_Domain = ClientFunction(() => window.location.href.toString());
+const topLevelDomain = '.fr';
+const baseURL = 'https://www.directferries.com';
+const iconElement = '[aria-label="Language Dropdown"]';
 const anchorTag = Selector('a');
 const h3Tag = Selector('h3');
 
@@ -35,7 +35,7 @@ export const homePage = async () => {
 export const clickSpecialOffers = async () => {
     await t
         .wait(3)
-        .click(anchorTag.withAttribute(attrKey,attrValue))
+        .click(anchorTag.withAttribute(attrKey, attrValue))
 };
 
 /**
@@ -54,15 +54,15 @@ export const special_Offers_Page = async () => {
  */
 export const countryIcon = async () => {
 
-      /*  await
-         t
-         .wait(2)
-         .takeElementScreenshot(element.find('a').withAttribute('aria-label','Language Dropdown').filterHidden())
-         .click(Selector(element,{visibilityCheck:true}).find('a').withAttribute('aria-label','Language Dropdown').filterHidden());
-      */
-       await t
-       .wait(1)
-       .click(iconSelector.nth(0).filterHidden());
+    /**await t
+        .wait(1)
+        .click(iconSelector.nth(0).filterHidden()); **/
+
+    await
+        t
+        .wait(2)
+        .takeElementScreenshot(getSelector(iconElement).filterHidden())
+        .click(getSelector(iconElement).filterHidden());
 };
 
 /**
@@ -75,3 +75,11 @@ export const frenchPage = async () => {
         .expect(h3Tag.innerText).eql(frenchPageText)
         .expect(top_Level_Domain()).contains(topLevelDomain);
 };
+
+/**
+ * @function selector-method thinking of putting this in a util folder/helper codes
+ * @reuseable code/function
+ */
+export const getSelector = Selector((tagElement) => {
+    return document.querySelector(tagElement);
+});

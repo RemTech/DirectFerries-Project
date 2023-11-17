@@ -15,7 +15,7 @@ const attrKey = 'href';
 const attrValue = '/offers.htm';
 const topLevelDomain = '.it';
 const baseURL = 'https://www.directferries.com';
-const element = Selector('div.user-actions');
+const iconElement = '[aria-label="Language Dropdown"]';
 const anchorTag = Selector('a');
 const h3Tag = Selector('h3');
 
@@ -58,8 +58,8 @@ export const countryIcon = async () => {
     await
         t
             .wait(2)
-            .takeElementScreenshot(element.find('a').withAttribute('aria-label', 'Language Dropdown').filterHidden())
-            .click(Selector(element, { visibilityCheck: true }).find('a').withAttribute('aria-label', 'Language Dropdown').filterHidden());
+            .takeElementScreenshot(getSelector(iconElement).filterHidden())
+            .click(getSelector(iconElement).filterHidden());
 };
 
 /**
@@ -74,3 +74,10 @@ export const italianPage = async () => {
         .expect(top_Level_Domain()).contains(topLevelDomain);
 };
 
+/**
+ * @function selector-method thinking of putting this in a util folder/helper codes
+ * @reuseable code/function
+ */
+export const getSelector = Selector((tagElement) => {
+    return document.querySelector(tagElement);
+});
