@@ -36,16 +36,16 @@ We would like you to complete a small task to demonstrate your technical underst
 ---------------------------
 
 
-[![Powered By NodeJs](./image/nodejs.jpg)](https://nodejs.org/en/download/)
+[![Powered By NodeJs](./image/nodejs.jpg "Powered By NodeJs")](https://nodejs.org/en/download/)
 
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-+ *Clone the repository by typing  `git clone repository_address`  on your Command line interface* 
++ *Clone the repository by typing  `git clone <repository_address>`  on your Command line interface* 
 + *Run the project by typing `npm install` and `npm run test` in the project directory (i.e where the project is saved on your computer) Command line interface*
 
 #### Note ####
 --------------
 > + *There are false negatives with the first two features due to a problem on the web page. Reference to the documentation to the issue can be found below*
 >   + *[TestCafe Documentation](https://testcafe.io/documentation/402752/reference/test-api/selector/filterhidden "Reference")*
->     + #### *@issue=dimension for the property is 0 X 0* ####
+>     +  *@issue=dimension for the property is 0 X 0*
